@@ -1,19 +1,31 @@
 
-#1-create user
+#============ 1-create user ====================
 
-# curl -X POST http://localhost:8000/add-band \
+# curl -X POST http://localhost:8000/users \
 #   -H "Content-Type: application/json" \
 #   -d '{
-#     "user_id": 3,
-#     "band": "Metallica"
+#     "user_id": 2,
+#     "name": "Julian",
+#     "email": "julian@email.com",
+#     "bands": [1]
 #   }'
 
+#============== 2 - get user ================
 
-#2-add band
+# curl http://127.0.0.1:8000/users/2
 
-# curl -X POST http://localhost:8000/add-band \
+#============== 3-add band ====================
+
+# curl -X POST http://localhost:8000/bands \
 #   -H "Content-Type: application/json" \
-#   -d '{"user_id":3,"band":"Metallica2"}'
+#   -d '{
+#     "band_id": 1,
+#     "name": "Metallica",
+#     "records": ["Kill Em All", "Ride the Lightning"],
+#     "assembly": 1981,
+#     "current_state": "active"
+#   }'
 
-#3-band listeners with id greater than 1
-curl -X GET http://localhost:8000/band-listeners
+#============== 4-get band =====================
+
+curl -X GET http://localhost:8000/bands/2
