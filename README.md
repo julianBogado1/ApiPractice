@@ -9,10 +9,6 @@ mock api to practice pymongo and fastapi concepts
 
 - [ ] Validate that a **User with the same `user_id` does not already exist**
 - [ ] Validate that a **Band with the same `band_id` does not already exist**
-- [ ] Return **HTTP 409 Conflict** when duplicates are detected
-- [ ] Add **unique indexes** in MongoDB for:
-  - `users.user_id`
-  - `bands.band_id`
 
 ---
 
